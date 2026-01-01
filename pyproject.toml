@@ -1,0 +1,20 @@
+[project]
+name = "python-template"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+requires-python = ">=3.11"
+dependencies = [
+    "altair>=5.5.0",
+    "beautifulsoup4>=4.13.5",
+    "feedparser>=6.0.12",
+    "finnhub-python>=2.4.24",
+    "html5lib>=1.1",
+    "lxml>=6.0.2",
+    "pandas>=2.3.2",
+    "plotly>=6.3.0",
+    "pytz>=2025.2",
+    "requests>=2.32.5",
+    "streamlit>=1.50.0",
+    "yfinance>=0.2.66",
+]

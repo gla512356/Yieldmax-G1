@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>일드맥스 도우미 | 반응형 스타터</title>
+  <meta name="description" content="일드맥스 ETF 배당락일 조회 도우미의 반응형 기본 페이지" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    :root{
+      --bg:#0b0b0c;
+      --card:#151516;
+      --text:#eaeaea;
+      --muted:#b8b8b8;
+      --accent-start:#00704A;
+      --accent-end:#34c759;
+      --maxw: 1100px;
+      --radius: 16px;
+      --shadow: 0 8px 24px rgba(0,0,0,.25);
+    }
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Apple SD Gothic Neo, "Noto Sans KR", "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 10% -10%, #0e1a12 0%, transparent 40%), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap{ max-width: var(--maxw); margin: 0 auto; padding: 16px clamp(12px, 3vw, 24px); }
+    header{ position: sticky; top: 0; z-index: 50; background: rgba(11,11,12,.6); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,.06); }
+    .head{ display: flex; align-items: center; justify-content: space-between; max-width: var(--maxw); margin: 0 auto; padding: 12px clamp(12px, 3vw, 24px); }
+    .brand{ font-weight: 700; letter-spacing: .3px; }
+    .brand b{ background: linear-gradient(90deg, var(--accent-start), var(--accent-end)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    nav a{ color: var(--muted); text-decoration: none; margin-left: 16px; font-size: 0.95rem; }
+    nav a:hover{ color: var(--text); }
+    main{ padding: 20px 0 48px; }
+    .hero{ display: grid; gap: 16px; grid-template-columns: 1fr; align-items: center; margin-bottom: 20px; }
+    .hero .copy{ background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: clamp(16px, 3vw, 28px); box-shadow: var(--shadow); }
+    .kicker{ color: var(--muted); font-size: .95rem; }
+    h1{ margin: 10px 0 8px; font-size: clamp(22px, 4.6vw, 34px); line-height: 1.25; }
+    .cta{ display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 999px; font-weight: 700; background: linear-gradient(90deg, var(--accent-start), var(--accent-end)); color: #0a0a0a; text-decoration: none; border: none; cursor: pointer; box-shadow: 0 8px 20px rgba(0, 200, 120, .25); transition: transform .08s ease, box-shadow .2s ease; margin-top: 8px; }
+    .cta:hover{ transform: translateY(-1px); box-shadow: 0 10px 24px rgba(0, 200, 120, .35); }
+    .cta:active{ transform: translateY(0); }
+    .grid{ display: grid; gap: 12px; grid-template-columns: 1fr; margin-top: 10px; }
+    .card{ background: var(--card); border: 1px solid rgba(255,255,255,.06); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); min-height: 80px; }
+    .card h3{ margin: 0 0 6px; font-size: 1.05rem; }
+    .app-frame{ position: relative; width: 100%; border: 1px dashed rgba(255,255,255,.18); border-radius: var(--radius); background: rgba(255,255,255,.02); overflow: hidden; aspect-ratio: 9 / 16; display: grid; place-items: center; color: var(--muted); }
+    .app-frame .placeholder{ opacity: .9; font-size: .95rem; text-align: center; padding: 10px; }
+    footer{ border-top: 1px solid rgba(255,255,255,.06); color: var(--muted); padding: 18px; text-align: center; }
+    @media (min-width: 768px){ .hero{ grid-template-columns: 1.1fr .9fr; } .grid{ grid-template-columns: repeat(2, 1fr); } .app-frame{ aspect-ratio: 16 / 10; } }
+    @media (min-width: 1024px){ .grid{ grid-template-columns: 2fr 1fr 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head">
+      <div class="brand">YieldMax <b>Toolkit</b></div>
+      <nav>
+        <a href="#app">앱</a>
+        <a href="#features">기능</a>
+        <a href="#about">소개</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="copy">
+        <div class="kicker">반응형 스타터</div>
+        <h1>웹페이지 자체에서 동작하도록<br/>기본 뼈대를 먼저 마련해요</h1>
+        <p style="margin: 6px 0 14px; color: var(--muted);">
+          모바일-우선 레이아웃 · 카드 UI · 임베드 슬롯(다음 단계에서 Streamlit/네이티브 연결)
+        </p>
+        <a class="cta" href="#app">🚀 시작하기</a>
+      </div>
+      <div class="app-frame" id="app">
+        <div class="app-frame" id="app">
+          <iframe
+            src="https://yieldmax-dividend-findergit-kckcnmvxhappuwc5eqlrc3h.streamlit.app/"
+            style="position:absolute; inset:0; width:100%; height:100%; border:0;"
+            loading="lazy"
+            allow="clipboard-write *; clipboard-read *">
+          </iframe>
+        </div>
+    </section>
+
+    <section id="features" class="grid">
+      <div class="card"><h3>📱 모바일 퍼스트</h3><div>작은 화면 최적화 → 큰 화면에서 컬럼 확장.</div></div>
+      <div class="card"><h3>🧱 카드 컴포넌트</h3><div>정보 블록을 나눠 가독성 업.</div></div>
+      <div class="card"><h3>🎛️ 임베드 컨테이너</h3><div>추후 스트림릿/리액트 위젯을 안전하게 삽입.</div></div>
+    </section>
+
+    <section id="about" style="margin-top: 16px;">
+      <div class="card">
+        <h3>소개</h3>
+        <div style="color:var(--muted)">
+          이 페이지는 “반응형 기본기 + 임베드 자리” 확보가 목적입니다.<br/>
+          다음 단계에서 실제 앱을 연결하고, 내비/푸터/섹션을 확장합니다.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2025 YieldMax Helper — 반응형 스타터</footer>
+</body>
+</html>
